@@ -247,6 +247,7 @@ public class RetrofitManager {
                     @Override
                     public void onError(Throwable e) {
 
+
                     }
 
                     @Override
