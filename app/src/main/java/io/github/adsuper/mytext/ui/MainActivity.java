@@ -17,6 +17,9 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
+/**
+ * retrofit 配置 OkHttpClient 参考：http://wuxiaolong.me/2016/06/18/retrofits/
+ */
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.imageview)
