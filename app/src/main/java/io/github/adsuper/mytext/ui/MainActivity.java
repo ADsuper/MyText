@@ -1,13 +1,20 @@
 package io.github.adsuper.mytext.ui;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import io.github.adsuper.mytext.R;
+import io.github.adsuper.mytext.swipebackhelper_text.BaseActivity;
+import io.github.adsuper.mytext.swipebackhelper_text.SwipeBackLayoutActivity;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -20,12 +27,17 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * retrofit 配置 OkHttpClient 参考：http://wuxiaolong.me/2016/06/18/retrofits/
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @BindView(R.id.imageview)
     ImageView mImageview;
 
     int drawableResouce = R.drawable.guide_bg_me;
+    @BindView(R.id.btn1)
+    Button mBtn1;
+    private int lastX;
+    private int lastY;
+    private int rawy;
 
 
     @Override
@@ -33,13 +45,44 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+//        SwipeBackHelper.getCurrentPage(this)
+//                .setSwipeBackEnable(false);
+//        SwipeBackHelper.getCurrentPage(this).setDisallowInterceptTouchEvent(true);
 
 //        RetrofitManager.getInstance().getDataFromServer_rxjava();
 //        RetrofitManager.getInstance().getDataFromServer_retrofit();
 //        RxjavaGuanChaZheMoShi.dingyue();
-//        setImageview();
+        setImageview();
 //        RetrofitManager.getInstance().getDataFromServer_rxjava_flatmap();
-        setImageview_map();
+//        setImageview_map();
+
+        mImageview.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                switch(motionEvent.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        rawy = (int)motionEvent.getRawY();
+
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+
+                        int rawY2 = (int)motionEvent.getRawY();
+                        int offsetY = rawY2 - rawy;
+                        Log.i("ACTION_MOVE_mImageview",offsetY+"");
+
+                        break;
+                    case MotionEvent.ACTION_UP:
+
+                        int rawY1 = (int)motionEvent.getRawY();
+                        Log.i("ACTION_UP_mImageview",(rawY1-rawy)+"");
+
+                        break;
+                }
+
+
+                return true;
+            }
+        });
     }
 
     /**
@@ -116,4 +159,43 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
+    @OnClick(R.id.btn1)
+    public void onViewClicked() {
+
+        Intent intent = new Intent(this, SwipeBackLayoutActivity.class);
+        startActivity(intent);
+
+
+
+    }
+
+
+//    @Override
+//    public boolean onTouchEvent(MotionEvent event) {
+//
+//
+//        switch(event.getAction()){
+//            case MotionEvent.ACTION_DOWN:
+//                rawy = (int)event.getRawY();
+//
+//                break;
+//            case MotionEvent.ACTION_MOVE:
+//
+//                int rawY2 = (int)event.getRawY();
+//                int offsetY = rawY2 - rawy;
+//             Log.i("ACTION_MOVE",offsetY+"");
+//
+//                break;
+//            case MotionEvent.ACTION_UP:
+//
+//                int rawY1 = (int)event.getRawY();
+//                Log.i("ACTION_UP",(rawY1-rawy)+"");
+//
+//                break;
+//        }
+//
+//
+//        return true;
+//    }
 }
