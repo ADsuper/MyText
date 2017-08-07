@@ -1,4 +1,4 @@
-package io.github.adsuper.mytext.ui;
+package io.github.adsuper.mytext1.ui;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -12,9 +12,10 @@ import android.widget.ImageView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import io.github.adsuper.mytext.R;
-import io.github.adsuper.mytext.swipebackhelper_text.BaseActivity;
-import io.github.adsuper.mytext.swipebackhelper_text.SwipeBackLayoutActivity;
+import io.github.adsuper.mytext1.R;
+import io.github.adsuper.mytext1.statebarandnavigationbar.StatesBarAndNavigationBarActivity;
+import io.github.adsuper.mytext1.swipebackhelper_text.BaseActivity;
+import io.github.adsuper.mytext1.swipebackhelper_text.SwipeBackLayoutActivity;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -35,6 +36,10 @@ public class MainActivity extends BaseActivity {
     int drawableResouce = R.drawable.guide_bg_me;
     @BindView(R.id.btn1)
     Button mBtn1;
+    @BindView(R.id.btn2)
+    Button mBtn2;
+    @BindView(R.id.btn3)
+    Button mBtn3;
     private int lastX;
     private int lastY;
     private int rawy;
@@ -52,29 +57,29 @@ public class MainActivity extends BaseActivity {
 //        RetrofitManager.getInstance().getDataFromServer_rxjava();
 //        RetrofitManager.getInstance().getDataFromServer_retrofit();
 //        RxjavaGuanChaZheMoShi.dingyue();
-        setImageview();
+//        setImageview();
 //        RetrofitManager.getInstance().getDataFromServer_rxjava_flatmap();
 //        setImageview_map();
 
         mImageview.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                switch(motionEvent.getAction()){
+                switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-                        rawy = (int)motionEvent.getRawY();
+                        rawy = (int) motionEvent.getRawY();
 
                         break;
                     case MotionEvent.ACTION_MOVE:
 
-                        int rawY2 = (int)motionEvent.getRawY();
+                        int rawY2 = (int) motionEvent.getRawY();
                         int offsetY = rawY2 - rawy;
-                        Log.i("ACTION_MOVE_mImageview",offsetY+"");
+                        Log.i("ACTION_MOVE_mImageview", offsetY + "");
 
                         break;
                     case MotionEvent.ACTION_UP:
 
-                        int rawY1 = (int)motionEvent.getRawY();
-                        Log.i("ACTION_UP_mImageview",(rawY1-rawy)+"");
+                        int rawY1 = (int) motionEvent.getRawY();
+                        Log.i("ACTION_UP_mImageview", (rawY1 - rawy) + "");
 
                         break;
                 }
@@ -160,12 +165,25 @@ public class MainActivity extends BaseActivity {
                 });
     }
 
-    @OnClick(R.id.btn1)
-    public void onViewClicked() {
+    @OnClick({R.id.btn1, R.id.btn2, R.id.btn3})
+    public void onViewClicked(View view) {
 
-        Intent intent = new Intent(this, SwipeBackLayoutActivity.class);
-        startActivity(intent);
+        switch (view.getId()) {
 
+            case R.id.btn1:
+                Intent intent = new Intent(this, SwipeBackLayoutActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btn2:
+                Intent intent2 = new Intent(this, CollapsingToolbarLayoutActivity.class);
+                startActivity(intent2);
+                break;
+            case R.id.btn3:
+                Intent intent3 = new Intent(this, StatesBarAndNavigationBarActivity.class);
+                startActivity(intent3);
+                break;
+
+        }
 
 
     }

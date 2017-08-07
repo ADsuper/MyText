@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="io.github.adsuper.mytext"
+<manifest package="io.github.adsuper.mytext1"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -21,8 +21,18 @@
         </activity>
         <activity android:name=".swipebackhelper_text.SwipeBackLayoutActivity"/>
         <activity android:name=".ui.Main22Activity">
-
         </activity>
+        <activity android:name=".ui.CollapsingToolbarLayoutActivity">
+        </activity>
+        <activity android:name=".statebarandnavigationbar.StatesBarAndNavigationBarActivity">
+        </activity>
+        <activity android:name=".statebarandnavigationbar.ColorBarActivity"></activity>
+        <activity android:name=".statebarandnavigationbar.DrawerActivity"></activity>
+        <activity android:name=".statebarandnavigationbar.HintBarActivity1"></activity>
+        <activity android:name=".statebarandnavigationbar.ImmersionBarActivity"></activity>
+        <activity android:name=".statebarandnavigationbar.TransparentBarActivity1"></activity>
+        <activity android:name=".statebarandnavigationbar.TransparentBarActivity2"></activity>
+        <activity android:name=".statebarandnavigationbar.HintBarActivity2"></activity>
     </application>
 
 </manifest>

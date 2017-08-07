@@ -1,4 +1,4 @@
-package io.github.adsuper.mytext.net_text.retrofit_text;
+package io.github.adsuper.mytext1.net_text.retrofit_text;
 
 import java.io.Serializable;
 import java.util.List;

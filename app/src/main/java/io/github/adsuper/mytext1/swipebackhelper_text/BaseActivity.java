@@ -1,4 +1,4 @@
-package io.github.adsuper.mytext.swipebackhelper_text;
+package io.github.adsuper.mytext1.swipebackhelper_text;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

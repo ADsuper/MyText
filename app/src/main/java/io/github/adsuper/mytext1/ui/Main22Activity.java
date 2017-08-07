@@ -1,4 +1,4 @@
-package io.github.adsuper.mytext.ui;
+package io.github.adsuper.mytext1.ui;
 
 import android.os.Bundle;
 import android.support.v4.widget.NestedScrollView;
@@ -11,7 +11,7 @@ import android.widget.RelativeLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.github.adsuper.mytext.R;
+import io.github.adsuper.mytext1.R;
 
 /**
  *  scrollview 嵌套 webview 问题

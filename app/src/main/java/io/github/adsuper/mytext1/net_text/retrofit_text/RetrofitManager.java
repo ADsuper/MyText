@@ -1,10 +1,10 @@
-package io.github.adsuper.mytext.net_text.retrofit_text;
+package io.github.adsuper.mytext1.net_text.retrofit_text;
 
 import android.util.Log;
 
 import java.util.List;
 
-import io.github.adsuper.mytext.common.Constant;
+import io.github.adsuper.mytext1.common11.Constant;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;

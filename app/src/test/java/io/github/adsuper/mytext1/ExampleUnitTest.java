@@ -1,4 +1,4 @@
-package io.github.adsuper.mytext;
+package io.github.adsuper.mytext1;
 
 import org.junit.Test;
 
