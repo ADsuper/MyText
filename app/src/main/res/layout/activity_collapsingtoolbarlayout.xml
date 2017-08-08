@@ -16,7 +16,7 @@
             android:layout_height="match_parent"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:collapsedTitleTextAppearance="@style/toolbarTitle"
-            app:contentScrim="@color/colorPrimary"
+            app:contentScrim="@color/colorAccent"
             app:expandedTitleGravity="bottom|center"
             app:expandedTitleTextAppearance="@style/toolbarTitle"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
