@@ -16,6 +16,8 @@ public class ImmersionBarActivity extends AppCompatActivity {
         UltimateBar ultimateBar = new UltimateBar(this);
         ultimateBar.setImmersionBar();
 
+//        StatusBarUtil.StatusBarLightMode(this);
+
         ((ImageView) findViewById(R.id.image_view)).setImageResource(R.drawable.yurisa_1);
     }
 

@@ -5,39 +5,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+
     android:orientation="vertical"
     tools:context="io.github.adsuper.mytext1.ui.MainActivity">
 
-    <ImageView
-        android:id="@+id/imageview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <include layout="@layout/toolbar"/>
 
-    <Button
-        android:id="@+id/btn1"
-        android:text="跳转到滑动退出activity"
-        android:layout_below="@id/imageview"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn2"
-        android:text="可折叠式标题栏"
-        android:layout_below="@id/imageview"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
-    <Button
-        android:id="@+id/btn3"
-        android:text="状态栏和导航栏"
-        android:layout_below="@id/imageview"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageview"
+            android:layout_centerHorizontal="true"
+            android:text="跳转到滑动退出activity"/>
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageview"
+            android:layout_centerHorizontal="true"
+            android:text="可折叠式标题栏"/>
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageview"
+            android:layout_centerHorizontal="true"
+            android:text="状态栏和导航栏"/>
+
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageview"
+            android:layout_centerHorizontal="true"
+            android:text="webview頁面"/>
+
+    </LinearLayout>
+
+
 </LinearLayout>

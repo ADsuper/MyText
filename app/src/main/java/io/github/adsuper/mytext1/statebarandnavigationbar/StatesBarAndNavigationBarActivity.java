@@ -45,7 +45,10 @@ public class StatesBarAndNavigationBarActivity extends AppCompatActivity {
 
 
         mToolbar.setBackgroundColor(ContextCompat.getColor(this,R.color.DeepSkyBlue));
+
         setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//左侧添加一个默认的返回图标
+        getSupportActionBar().setHomeButtonEnabled(true); //设置返回键可用
 
     }
 

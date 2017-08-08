@@ -15,6 +15,7 @@ import java.lang.reflect.Field;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.github.adsuper.mytext1.R;
+import io.github.adsuper.mytext1.statebarandnavigationbar.StatusBarUtil;
 
 import static io.github.adsuper.mytext1.R.id.imageview;
 
@@ -38,9 +39,13 @@ public class CollapsingToolbarLayoutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_collapsingtoolbarlayout);
+
         ButterKnife.bind(this);
 
+        StatusBarUtil.transparencyBar(this);
+
         mToolbar.setTitle("可折叠式标题栏");
+
 
         try {
             Field field = mToolbar.getClass().getField("mTitleTextView");

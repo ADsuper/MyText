@@ -3,6 +3,7 @@ package io.github.adsuper.mytext1.ui;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -16,6 +17,7 @@ import io.github.adsuper.mytext1.R;
 import io.github.adsuper.mytext1.statebarandnavigationbar.StatesBarAndNavigationBarActivity;
 import io.github.adsuper.mytext1.swipebackhelper_text.BaseActivity;
 import io.github.adsuper.mytext1.swipebackhelper_text.SwipeBackLayoutActivity;
+import io.github.adsuper.mytext1.webview.WebViewActivity;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -40,6 +42,10 @@ public class MainActivity extends BaseActivity {
     Button mBtn2;
     @BindView(R.id.btn3)
     Button mBtn3;
+    @BindView(R.id.toolbar)
+    Toolbar mToolbar;
+    @BindView(R.id.btn4)
+    Button mBtn4;
     private int lastX;
     private int lastY;
     private int rawy;
@@ -60,6 +66,11 @@ public class MainActivity extends BaseActivity {
 //        setImageview();
 //        RetrofitManager.getInstance().getDataFromServer_rxjava_flatmap();
 //        setImageview_map();
+
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//左侧添加一个默认的返回图标
+        getSupportActionBar().setHomeButtonEnabled(true); //设置返回键可用
+
 
         mImageview.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -165,7 +176,7 @@ public class MainActivity extends BaseActivity {
                 });
     }
 
-    @OnClick({R.id.btn1, R.id.btn2, R.id.btn3})
+    @OnClick({R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4})
     public void onViewClicked(View view) {
 
         switch (view.getId()) {
@@ -181,6 +192,10 @@ public class MainActivity extends BaseActivity {
             case R.id.btn3:
                 Intent intent3 = new Intent(this, StatesBarAndNavigationBarActivity.class);
                 startActivity(intent3);
+                break;
+            case R.id.btn4:
+                Intent intent4 = new Intent(this, WebViewActivity.class);
+                startActivity(intent4);
                 break;
 
         }

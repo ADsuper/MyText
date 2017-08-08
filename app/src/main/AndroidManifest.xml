@@ -4,12 +4,14 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme2">
         <activity
             android:name=".ui.MainActivity"
             android:theme="@style/SwipeBackLayoutActivity_style">
@@ -22,17 +24,20 @@
         <activity android:name=".swipebackhelper_text.SwipeBackLayoutActivity"/>
         <activity android:name=".ui.Main22Activity">
         </activity>
-        <activity android:name=".ui.CollapsingToolbarLayoutActivity">
+        <activity android:name=".ui.CollapsingToolbarLayoutActivity"
+            >
         </activity>
         <activity android:name=".statebarandnavigationbar.StatesBarAndNavigationBarActivity">
         </activity>
-        <activity android:name=".statebarandnavigationbar.ColorBarActivity"></activity>
-        <activity android:name=".statebarandnavigationbar.DrawerActivity"></activity>
-        <activity android:name=".statebarandnavigationbar.HintBarActivity1"></activity>
-        <activity android:name=".statebarandnavigationbar.ImmersionBarActivity"></activity>
-        <activity android:name=".statebarandnavigationbar.TransparentBarActivity1"></activity>
-        <activity android:name=".statebarandnavigationbar.TransparentBarActivity2"></activity>
-        <activity android:name=".statebarandnavigationbar.HintBarActivity2"></activity>
+        <activity android:name=".statebarandnavigationbar.ColorBarActivity"/>
+        <activity android:name=".statebarandnavigationbar.DrawerActivity"/>
+        <activity android:name=".statebarandnavigationbar.HintBarActivity1"/>
+        <activity android:name=".statebarandnavigationbar.ImmersionBarActivity"/>
+        <activity android:name=".statebarandnavigationbar.TransparentBarActivity1"/>
+        <activity android:name=".statebarandnavigationbar.TransparentBarActivity2"/>
+        <activity android:name=".statebarandnavigationbar.HintBarActivity2"/>
+        <activity android:name=".webview.WebViewActivity">
+        </activity>
     </application>
 
 </manifest>

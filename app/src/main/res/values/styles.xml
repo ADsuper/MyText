@@ -7,11 +7,14 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowAnimationStyle">@style/SlideRightAnimation</item>
+
     </style>
 
-    <style name="AppTheme2" parent="AppTheme"/>
+    <style name="AppTheme2" parent="AppTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/SlideRightAnimation</item>
+
+    </style>
 
     <style name="SwipeBackLayoutActivity_style" parent="AppTheme">
         <item name="android:windowIsTranslucent">false</item>
@@ -19,6 +22,10 @@
 
     <style name="toolbarTitle" >
         <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="collapsing" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
 
